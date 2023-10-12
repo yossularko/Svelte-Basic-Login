@@ -1,0 +1,8 @@
+<script>
+	import Backendless from 'backendless';
+	const BACKENDLESS_APP_ID = import.meta.env.VITE_BACKENDLESS_APP_ID;
+	const BACKENDLESS_API_KEY = import.meta.env.VITE_BACKENDLESS_API_KEY;
+	Backendless.initApp(BACKENDLESS_APP_ID, BACKENDLESS_API_KEY);
+</script>
+
+<slot />
