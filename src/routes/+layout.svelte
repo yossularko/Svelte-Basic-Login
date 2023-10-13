@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '$lib/app.css';
 	import Backendless from 'backendless';
 	const BACKENDLESS_APP_ID = import.meta.env.VITE_BACKENDLESS_APP_ID;
 	const BACKENDLESS_API_KEY = import.meta.env.VITE_BACKENDLESS_API_KEY;
