@@ -40,6 +40,6 @@
 			<button type="submit" class="btn btn-primary">Register</button>
 		</form>
 	{:else}
-		<h2 class="text-5xl font-bold">Hooray!</h2>
+		<h2 class="text-lg">Hooray!</h2>
 	{/if}
 </div>
