@@ -7,6 +7,7 @@
 
 	import { user } from '$lib/store';
 	import type { UserData } from '$lib/types';
+	import Input from '$lib/components/Input.svelte';
 
 	let loginData = {
 		email: '',
@@ -32,10 +33,10 @@
 {#if $user.email}
 	<h1>Welcome, {$user.name}</h1>
 {:else}
-	<form on:submit={handleLogin}>
-		<label>Email: <input type="email" bind:value={loginData.email} /></label>
-		<label>Password: <input type="password" bind:value={loginData.password} /></label>
-		<button type="submit">Log In</button>
+	<form on:submit={handleLogin} class="card card-body" style="max-width: 400px">
+		<Input label="Email:" id="login-email" bind:value={loginData.email} type="email" />
+		<Input label="Password:" id="login-password" bind:value={loginData.password} type="password" />
+		<button type="submit" class="btn btn-primary">Log In</button>
 	</form>
 {/if}
 
