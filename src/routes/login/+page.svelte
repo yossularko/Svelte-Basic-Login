@@ -2,6 +2,7 @@
 	import { user } from '$lib/store';
 	import type { UserData } from '$lib/types';
 	import Input from '$lib/components/Input.svelte';
+	import { goto } from '$app/navigation';
 
 	let loginData = {
 		email: '',
@@ -17,6 +18,7 @@
 
 			// Save the updated user information to our svelte store
 			user.set(response as UserData);
+			await goto('/');
 		} catch (error: any) {
 			console.log('error login: ', error);
 			alert(error?.message || 'Gagal Login');
@@ -30,5 +32,6 @@
 		<Input label="Email:" id="login-email" bind:value={loginData.email} type="email" />
 		<Input label="Password:" id="login-password" bind:value={loginData.password} type="password" />
 		<button type="submit" class="btn btn-primary">Log In</button>
+		<a href="/register" class="link link-primary"> Register </a>
 	</form>
 </div>

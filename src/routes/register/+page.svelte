@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import Input from '$lib/components/Input.svelte';
 
 	let pendingRegistration = true;
@@ -18,6 +19,10 @@
 			await Backendless.UserService.register(user);
 
 			pendingRegistration = !pendingRegistration;
+
+			setTimeout(async () => {
+				await goto('/login');
+			}, 3000);
 		} catch (error: any) {
 			console.log('error register: ', error);
 			alert(error?.message || 'Gagal register');
